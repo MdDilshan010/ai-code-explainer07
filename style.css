@@ -1,0 +1,48 @@
+:root{--ink:#14213d;--paper:#f5f6fa;--card:#fff;--line:#dfe3ee;--teal:#0f9d8a;--amber:#ffb703;--muted:#5b6785;--code:#101a30}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Bricolage Grotesque',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font-weight:800;font-size:1.15rem;display:flex;gap:10px;align-items:center}
+.logo svg{width:30px;height:30px}
+nav a{margin-left:18px;color:var(--muted);text-decoration:none;font-weight:500}
+nav a:hover{color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;padding:36px 0 48px}
+h1{font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.05;margin:0 0 16px;font-weight:800;letter-spacing:-.02em}
+.hero p{color:var(--muted);font-size:1.1rem;max-width:46ch}
+.btn{display:inline-block;background:var(--ink);color:#fff;border:0;padding:12px 22px;border-radius:10px;font:600 1rem 'Bricolage Grotesque',sans-serif;cursor:pointer;text-decoration:none}
+.btn:hover{background:#22345e}.btn.alt{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn:focus-visible,select:focus-visible,textarea:focus-visible,input:focus-visible,.lvl:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.hero svg{width:100%;height:auto}
+h2{font-size:1.7rem;margin:0 0 6px}
+.sub{color:var(--muted);margin:0 0 20px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;margin-bottom:28px}
+.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
+.lvl{border:2px solid var(--line);border-radius:12px;padding:12px;background:#fff;cursor:pointer;text-align:left;font:inherit;color:inherit;display:flex;gap:12px;align-items:center}
+.lvl svg{width:46px;height:46px;flex:none}
+.lvl b{display:block}.lvl small{color:var(--muted)}
+.lvl[aria-pressed=true]{border-color:var(--teal);background:#effaf8}
+.row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:14px}
+.row label{display:flex;flex-direction:column;font-size:.85rem;color:var(--muted);gap:4px;flex:1;min-width:150px}
+select,input,textarea{font:inherit;padding:9px 10px;border:1.5px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}
+textarea{width:100%;min-height:200px;font-family:'JetBrains Mono',monospace;font-size:.88rem;background:var(--code);color:#e8edf8;border-radius:10px;border:0;resize:vertical;padding:14px}
+details{margin:12px 0;color:var(--muted)}summary{cursor:pointer;font-weight:600;color:var(--ink)}
+.out{display:grid;gap:0;margin-top:20px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.ln{display:grid;grid-template-columns:44px minmax(0,1fr) minmax(0,1.2fr);border-bottom:1px solid var(--line)}
+.ln:last-child{border-bottom:0}
+.ln .n{background:#eef0f7;color:var(--muted);text-align:right;padding:10px 8px;font-family:'JetBrains Mono',monospace;font-size:.8rem}
+.ln code{background:var(--code);color:#e8edf8;padding:10px 12px;font:.85rem 'JetBrains Mono',monospace;white-space:pre-wrap;word-break:break-word}
+.ln p{margin:0;padding:10px 14px;border-left:4px solid var(--amber);background:#fffdf4}
+.empty{display:flex;gap:16px;align-items:center;padding:20px;color:var(--muted)}
+.empty svg{width:90px;flex:none}
+.hist{display:grid;gap:10px}
+.h{display:flex;justify-content:space-between;gap:12px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:#fff}
+.h code{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--muted)}
+.tag{background:#effaf8;color:var(--teal);border-radius:20px;padding:2px 10px;font-size:.8rem;font-weight:600;margin-right:8px}
+.h button{margin-left:8px}
+.sm{padding:6px 12px;font-size:.85rem}
+.status{color:var(--muted);margin-left:12px}
+footer{padding:30px 0;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.levels{grid-template-columns:1fr}.ln{grid-template-columns:34px 1fr}.ln p{grid-column:1/-1;border-left:0;border-top:4px solid var(--amber)}nav{display:none}}
+@media(prefers-reduced-motion:no-preference){.hero svg .scan{animation:scan 3.2s ease-in-out infinite alternate}}
+@keyframes scan{from{transform:translateY(0)}to{transform:translateY(120px)}}
